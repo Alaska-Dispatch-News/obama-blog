@@ -3,15 +3,169 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
+// SASS Variables
+@import "_variables.scss";
+
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic);
+
+// Font Awesome
+@import "font-awesome/font-awesome.scss";
+
+
+
 
 body {
   padding: 0;
+  font-family: $primary-font;
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.padding-fix {
+  padding-top: 100px;
+}
+
+/* Applies a color palette for social media icons / adn.com titles */
+.facebook {
+  color: $facebook-color;
+}
+
+.twitter {
+  color: $twitter-color;
+}
+
+.mail {
+  color: $mail-color;
+}
+
+/* Sets a max-width on the title svg */
+.adn-title {
+  max-width: 100px;
+}
+
+.red-title {
+  font-weight: bold;
+  color: $adn-red;
+}
+
+/* Vertically aligns two columns next to eachother. This style belongs on columns
+  within a row that need to be aligned next to eeachother. */
+.vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+
+  /* Adjusts the display from inline-block to block to prevent incorrect alignment
+    when scaling down on smaller screens */
+  @media (max-width: 768px) {
+        display: block;
+  }
+}
+
+.blog-post {
+  background-color: $white;
+  padding: 20px;
+  margin-bottom: 50px;
+
+
+  .blog-post-content {
+    padding: 30px;
+  }
+
+  .blog-post-header {
+    font-family: $secondary-font;
+  }
+
+  .blog-post-thumbnail {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .blog-post-readmore {
+    font-size: 20px;
+  }
+
+  .share-buttons {
+    text-align: right;
+
+    @media screen and (max-width: 1200px) {
+      text-align: left;
+    }
+  }
+}
+
+/* Navigation bar overrides. Overrides the default Bootstrap styles and
+  implements styles. */
+.navbar {
+  /* Sets up the overall font-size, min height and box-shadow for the entire nav*/
+  background-color: $navbar-color;
+  min-height:32px !important; margin-bottom: 0;
+  font-size: 25px;
+  -webkit-box-shadow: 0 8px 6px -6px #252121;
+  -moz-box-shadow: 0 8px 6px -6px #252121;
+  box-shadow: 0 8px 6px -6px #252121;
+
+  /* Removes navigation bar padding to keep everything aligned */
+  .navbar-nav > li > a {
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+  }
+
+  /* Generates spacing between the social icons */
+  .fa {
+    padding-right: 20px;
+
+    @media screen and (max-width: 960px) {
+      /* Removes padding on smaller devices to prevent overlap */
+      padding-right: 0px;
+    }
+  }
+
+  /* Overrides the padding on these classes so they are closer together.
+    This prevents overlapping on smaller screens */
+  .home-icon, .adn-text {
+    padding-right: 5px;
+  }
+
+  /* Used to create the center text on the nav bar */
+  .navbar-brand {
+      position: absolute;
+      font-size: 20px !important;
+      padding: 12px !important;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      margin: auto;
+      /* Hides nav-bar center text on smaller devices. */
+      @media screen and (max-width: 960px) {
+        display: none;
+      }
+  }
+
+  /* The following styles remove the standard collapsing behavior of the bootstrap
+    navbar. Simply comment these out and add the collapse class back to the page
+    to re-enable it */
+  .navbar-collapse.collapse {
+    display: block!important;
+  }
+
+  .navbar-nav>li, .navbar-nav {
+    float: left !important;
+  }
+
+  .navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+  }
+
+  .navbar-right {
+    float: right !important;
+  }
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,50 +176,7 @@ body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

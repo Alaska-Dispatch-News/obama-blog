@@ -1,4 +1,4 @@
-// Generated on 2015-08-22 using generator-angular 0.12.1
+// Generated on 2015-07-21 using generator-angular 0.12.1
 'use strict';
 
 // # Globbing
@@ -242,7 +242,7 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -258,7 +258,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              js: ['concat', 'uglify.js'],
               css: ['cssmin']
             },
             post: {}
@@ -277,10 +277,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/images',
           '<%= yeoman.dist %>/styles'
-        ],
-        patterns: {
-          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
-        }
+        ]
       }
     },
 
@@ -359,6 +356,17 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>',
         src: 'views/{,*/}*.html',
         dest: '.tmp/templateCache.js'
+      }
+    },
+
+    responsive_images: {
+      dev: {
+        files: [{
+          expand: true,
+          src: ['*.{jpg,gif,png}'],
+          cwd: '<%= yeoman.app %>/images',
+          dest: '<%= yeoman.app %>/images'
+        }]
       }
     },
 
@@ -493,5 +501,9 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('img-compress', [
+    'responsive_images'
   ]);
 };

@@ -1,102 +1,50 @@
-<div class="col-lg-8 col-lg-offset-4 blog-post">
-
-  <div class="blog-post-content">
-
-      <div class="row">
-        <div class="col-lg-12 text-right">
-          <p>Time Stamp</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>Alaska congressional delegation in the dark on Obama visit</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <p>Erica Martinson</p>
-        </div>
-        <div class="col-lg-6 share-buttons">
-          <img src="images/share_mock.png"/>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <img class="img-responsive blog-post-thumbnail" src="https://www.adn.com/sites/default/files/styles/ad_slideshow_wide/public/150822BirdTLC03.JPG?itok=Dg8_Kkg1" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <p>On a brisk September morning last fall, the topic on KFQD’s “Bernadette and Berkowitz” was plastic
-bags.
-“Their ban on plastic bags,” host Bernadette Wilson was saying, referring to a California law, “is ridiculous.”
-Her co-host and liberal foil, San Francisco-born Ethan Berkowitz, challenged whether she actually
-recycled plastic bags. Their sparring on the topic extended over a commercial break.
-“Look at you putting the ‘conserve’ back in conservative,” Berkowitz jibed.
-It was the type of banter that made Wilson, a conservative commentator, and Berkowitz, a former
-Democratic state representative, popular on the air. As a counterpoint to Wilson, Berkowitz was
-constantly questioning her sources of information and wondering what controversies like President
-Barack Obama’s “latte salute” said about society.</p>
-          <h3 class="blog-post-readmore">Read More >></h3>
-        </div>
-      </div>
-
-  </div>
-
+<div class="col-lg-4 col-lg-offset-1 text-center">
+  <h1>HELLO THIS IS WHERE</h1>
+  <h2>WE CANPLACE SOME ADS</h2>
+  <img class="img-responsive" src="http://jamesiv.es/images/pixel_face.png">
 </div>
 
-<!--Second Post test -->
+<div class="col-lg-5 col-lg-offset-0">
 
-<div class="col-lg-8 col-lg-offset-4 blog-post">
+  <div ng-repeat="article in articles" class="blog-post">
 
-  <div class="blog-post-content">
+    <div class="blog-post-content">
 
-      <div class="row">
-        <div class="col-lg-12 text-right">
-          <p>Time Stamp</p>
+        <div class="row">
+          <div class="col-lg-6 blog-post-topic">
+            <p>{{ article.topics }}</p>
+          </div>
+          <div class="col-lg-6 text-right">
+            <p>{{ article.posted }}</p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>Alaska congressional delegation in the dark on Obama visit</h1>
+        <div class="row">
+          <div class="col-lg-12">
+            <h1><a href="http://adn.com/{{ article.path }}">{{ article.node_title }}</a></h1>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-6">
-          <p>Erica Martinson</p>
+        <div class="row">
+          <div class="col-lg-6 blog-post-author">
+            <p>{{ article.author }}</p>
+          </div>
         </div>
-        <div class="col-lg-6 share-buttons">
-          <img src="images/share_mock.png"/>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <img class="img-responsive blog-post-thumbnail" src="https://www.adn.com/sites/default/files/styles/ad_slideshow_wide/public/150822BirdTLC03.JPG?itok=Dg8_Kkg1" />
+        <div class="row">
+          <div class="col-lg-12">
+            <span ng-class="blog-post-thumbnail" ng-bind-html="to_trusted(article.image_940)"></span>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <p>On a brisk September morning last fall, the topic on KFQD’s “Bernadette and Berkowitz” was plastic
-bags.
-“Their ban on plastic bags,” host Bernadette Wilson was saying, referring to a California law, “is ridiculous.”
-Her co-host and liberal foil, San Francisco-born Ethan Berkowitz, challenged whether she actually
-recycled plastic bags. Their sparring on the topic extended over a commercial break.
-“Look at you putting the ‘conserve’ back in conservative,” Berkowitz jibed.
-It was the type of banter that made Wilson, a conservative commentator, and Berkowitz, a former
-Democratic state representative, popular on the air. As a counterpoint to Wilson, Berkowitz was
-constantly questioning her sources of information and wondering what controversies like President
-Barack Obama’s “latte salute” said about society.</p>
-          <h3 class="blog-post-readmore">Read More >></h3>
+        <div class="row">
+          <div class="col-lg-12">
+            <span ng-bind-html="to_trusted(article.teaser)"></span>
+            <h3 class="blog-post-readmore"><a href="http://adn.com{{ article.path }}">Read More >></a></h3>
+          </div>
         </div>
-      </div>
+
+    </div>
 
   </div>
 

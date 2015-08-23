@@ -72,32 +72,33 @@ body {
   padding: 20px;
   margin-bottom: 50px;
 
+  img {
+    @extend .img-responsive;
+    padding-bottom: 10px;
+  }
+
+  .blog-post-topic {
+    @extend .text-left;
+    color: $adn-red;
+    font-weight: bold;
+  }
 
   .blog-post-content {
     padding: 30px;
+  }
+
+  .blog-post-author {
+    font-weight: bold;
   }
 
   .blog-post-header {
     font-family: $secondary-font;
   }
 
-  .blog-post-thumbnail {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
   .blog-post-readmore {
     font-size: 20px;
   }
 
-  .share-buttons {
-    text-align: right;
-
-    @media screen and (max-width: 1200px) {
-      text-align: left;
-    }
-  }
 }
 
 /* Navigation bar overrides. Overrides the default Bootstrap styles and
@@ -174,29 +175,5 @@ body {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
-}
-
-
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+  color: $white;
 }

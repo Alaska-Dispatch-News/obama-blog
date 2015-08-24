@@ -14,8 +14,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "font-awesome/font-awesome.scss";
 
 
-
-
+/* Main Styles */
 body {
   padding: 0;
   font-family: $primary-font;
@@ -26,11 +25,28 @@ body {
   background-size: cover;
 }
 
+a:hover, a:visited, a:link, a:active {
+  /* Removes text decoration from all anchor tags.
+  Prevents underlines. */
+  text-decoration: none;
+}
+
+a {
+  /* Sets up page wide link hover effects. */
+  transition: all .6s ease 0s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Applys padding to the primary container to prevent the nav-bar from
+overlapping content. */
 .padding-fix {
   padding-top: 100px;
 }
 
-/* Applies a color palette for social media icons / adn.com titles */
+/* Applies a color palette for social media icons. */
 .facebook {
   color: $facebook-color;
 }
@@ -43,60 +59,63 @@ body {
   color: $mail-color;
 }
 
-/* Sets a max-width on the title svg */
+/* Sets a max-width on the title image. */
 .adn-title {
   max-width: 100px;
 }
 
+/* Applies the signature bolded red ADN text */
 .red-title {
   font-weight: bold;
   color: $adn-red;
 }
 
-/* Vertically aligns two columns next to eachother. This style belongs on columns
-  within a row that need to be aligned next to eeachother. */
-.vertical-align {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-
-  /* Adjusts the display from inline-block to block to prevent incorrect alignment
-    when scaling down on smaller screens */
-  @media (max-width: 768px) {
-        display: block;
-  }
-}
-
+/* Styles for each blog post. */
 .blog-post {
   background-color: $white;
   padding: 20px;
   margin-bottom: 50px;
 
+  /* Inner blog-post padding. */
+  .blog-post-content {
+    padding: 30px;
+  }
+
+  /* Applies the img-responsive class to all images within .blog-post.
+    Setup like this as the JSON feed pulls in HTML-Ready content for the imagess */
   img {
     @extend .img-responsive;
     padding-bottom: 10px;
   }
 
+  /* Blog-post topic text. */
   .blog-post-topic {
     @extend .text-left;
-    color: $adn-red;
-    font-weight: bold;
+    @extend .red-title;
   }
 
-  .blog-post-content {
-    padding: 30px;
-  }
-
+  /* Blog-post author. */
   .blog-post-author {
     font-weight: bold;
   }
 
+  /* Blog-Post title. */
   .blog-post-header {
     font-family: $secondary-font;
   }
 
+  /* Blog-Post read-more text. */
   .blog-post-readmore {
     font-size: 20px;
+  }
+
+  /* Blog-Post date. Adjusts text alignment for smaller screens. */
+  .blog-post-date {
+    @extend .text-right;
+
+      @media (max-width: 1200px) {
+        text-align: left;
+      }
   }
 
 }
@@ -169,9 +188,7 @@ body {
   }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
+/* Sets up styles for the footer. */
 .footer {
   padding-left: 15px;
   padding-right: 15px;

@@ -5,8 +5,8 @@
 </div>
 
 <div class="col-lg-5 col-lg-offset-0">
-  <div infinite-scroll="nextPage()" infinite-scroll-disabled="busy" infinite-scroll-distance="3">
-    <div ng-repeat="article in articles" class="blog-post">
+  <div infinite-scroll="article.nextPage()" infinite-scroll-disabled="article.busy" infinite-scroll-distance="1">
+    <div ng-repeat="article in article.items" class="blog-post">
 
       <div class="blog-post-content">
 

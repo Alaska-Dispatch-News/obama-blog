@@ -8,7 +8,7 @@
  * Controller of the obamaBlogApp
  */
 angular.module('obamaBlogApp')
-  .controller('MainCtrl', function ($scope, $http, $sce) {
+  .controller('MainCtrl', function ($scope, $http, $sce, Article) {
 
     /* Creates a re-usable function that can be used to bind HTML to the DOM from
       the JSON. */
@@ -25,4 +25,5 @@ angular.module('obamaBlogApp')
       .error(function(data) {
       console.log("Error Receiving Data");
     });
+    $scope.article = new Article();
   });

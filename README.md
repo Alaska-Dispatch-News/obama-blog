@@ -33,6 +33,7 @@ Bootstrap: http://getbootstrap.com
 AngularJS: https://angularjs.org
 jQuery: https://jquery.com
 ngInfiniteScroll Directive: https://sroze.github.io/ngInfiniteScroll
+FontAwesome: https://fortawesome.github.io/Font-Awesome/
 Yeoman: http://yeoman.io
 SASS: http://sass-lang.com
 ````

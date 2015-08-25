@@ -27,6 +27,8 @@ Additional details on how to contribute to a Git project can be [found here](htt
 The following frameworks and tools were used to create this project:
 
 ````
+Version numbers can be found within bower.json
+
 Bootstrap: http://getbootstrap.com
 AngularJS: https://angularjs.org
 jQuery: https://jquery.com

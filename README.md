@@ -1,4 +1,4 @@
-# Alaska Dispatch: Obama Visit Blog
+# Alaska Dispatch News: Obama Visit Blog
 
 Created for the ADN newsroom staff to post content related to President Barrack Obama's visit
 to Alaska in August 2015.

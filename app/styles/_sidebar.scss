@@ -1,0 +1,40 @@
+
+/* Sidebar Styles. */
+.side-bar {
+  @extend .text-right;
+  color: $white;
+  text-shadow: 2px 2px $black;
+
+  /* Fixes the sidebar text so it doesn't scroll. */
+  .text-fixed {
+    position: fixed;
+    width: 24%;
+
+    /* Sets the position back to relative/100% on smaller devices so sits on the page
+      properly on mobile devices. */
+    @media (max-width: 1200px) {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Header "Obama Visits Alaska" text. */
+    h1 {
+      font-size: 50px;
+      font-weight: bolder;
+      color: $alaska-yellow;
+    }
+
+    /* "#obamaAK" text */
+    h2 {
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    /* "Submit your photos" text. */
+    h3 {
+      a {
+        font-size: 17px;
+      }
+    }
+  }
+}

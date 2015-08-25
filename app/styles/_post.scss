@@ -1,0 +1,58 @@
+
+/* Styles for each blog post. */
+.blog-post {
+  background-color: $white;
+  padding: 20px;
+  margin-bottom: 50px;
+
+  /* Inner blog-post padding. */
+  .blog-post-content {
+    padding: 30px;
+
+    @media (max-width: 480px) {
+      padding: 20px;
+    }
+  }
+
+  /* Applies the img-responsive class to all images within .blog-post.
+    Setup like this as the JSON feed pulls in HTML-Ready content for the imagess */
+  img {
+    @extend .img-responsive;
+    padding-bottom: 10px;
+  }
+
+  /* Blog-post topic text. */
+  .blog-post-topic {
+    @extend .text-left;
+    @extend .red-title;
+  }
+
+  /* Blog-post author. */
+  .blog-post-author {
+    font-weight: bold;
+  }
+
+  /* Blog-Post title. */
+  .blog-post-header {
+    font-family: $secondary-font;
+
+    @media (max-width: 480px) {
+      font-size: 30px;
+    }
+  }
+
+  /* Blog-Post read-more text. */
+  .blog-post-readmore {
+    font-size: 20px;
+  }
+
+  /* Blog-Post date. Adjusts text alignment for smaller screens. */
+  .blog-post-date {
+    @extend .text-right;
+
+      @media (max-width: 1200px) {
+        text-align: left;
+      }
+  }
+
+}

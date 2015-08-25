@@ -1,10 +1,13 @@
-<div class="col-lg-3 col-lg-offset-2 text-center">
-  <h1>HELLO THIS IS WHERE</h1>
-  <h2>WE CANPLACE SOME ADS</h2>
-  <img class="img-responsive" src="http://jamesiv.es/images/pixel_face.png">
+<div class="col-lg-3 col-lg-offset-1 text-right side-bar">
+  <div class="row text-fixed">
+    <h1>President Obama's Visit to Alaska</h1>
+    <h2>#obamaAK</h2>
+    <h3><a href="mailto:submissions@alaskadispatch.com">Submit your photos</a></h3>
+  </div>
 </div>
 
-<div class="col-lg-5 col-lg-offset-0">
+<div class="col-lg-7 col-lg-offset-0">
+  <!--Sets up the parametres for the infinite-scroll directive-->
   <div infinite-scroll="article.nextPage()" infinite-scroll-disabled="article.busy" infinite-scroll-distance="1">
     <div ng-repeat="article in article.items" class="blog-post">
 
@@ -12,10 +15,10 @@
 
           <div class="row">
             <div class="col-lg-6 blog-post-topic">
-              <p>{{ article.topics }}</p>
+              <p ng-bind-html="to_trusted(article.topics)"></p>
             </div>
             <div class="col-lg-6 blog-post-date">
-              <p>{{ article.posted }}</p>
+              <p ng-bind-html="to_trusted(article.posted)"></p>
             </div>
           </div>
 
@@ -27,7 +30,7 @@
 
           <div class="row">
             <div class="col-lg-6 blog-post-author">
-              <p>{{ article.author }}</p>
+              <p ng-bind-html="to_trusted(article.author)"></p>
             </div>
           </div>
 

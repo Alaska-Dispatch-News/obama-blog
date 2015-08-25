@@ -1,6 +1,6 @@
 # Alaska Dispatch: Obama Visit Blog
 
-Created for the newsroom staff to post content related to President Barrack Obama's visit
+Created for the ADN newsroom staff to post content related to President Barrack Obama's visit
 to Alaska in August 2015.
 
 ## Installation
@@ -27,12 +27,12 @@ Additional details on how to contribute to a Git project can be [found here](htt
 The following frameworks and tools were used to create this project:
 
 ````
-[Bootstrap](http://getbootstrap.com/)
-[AngularJS](https://angularjs.org/)
-[jQuery](https://jquery.com/)
-[ngInfiniteScroll Directive](https://sroze.github.io/ngInfiniteScroll/)
-[Yeoman](http://yeoman.io/)
-[SASS](http://sass-lang.com/)
+Bootstrap: http://getbootstrap.com
+AngularJS: https://angularjs.org
+jQuery: https://jquery.com
+ngInfiniteScroll Directive: https://sroze.github.io/ngInfiniteScroll
+Yeoman: http://yeoman.io
+SASS: http://sass-lang.com
 ````
 
-!(Screenshot)[screenshot.png]
+![Screenshot](screenshot.png)

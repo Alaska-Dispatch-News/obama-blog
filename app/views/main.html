@@ -9,7 +9,8 @@
 <div class="col-lg-7 col-lg-offset-0">
   <!--Sets up the parametres for the infinite-scroll directive-->
   <div infinite-scroll="article.nextPage()" infinite-scroll-disabled="article.busy" infinite-scroll-distance="1">
-    <div ng-repeat="article in article.items" class="blog-post">
+    <!--Repeats all articles found from the JSON call and filters them by the node ID-->
+    <div ng-repeat="article in article.items | unique: 'nid'" class="blog-post">
 
       <div class="blog-post-content">
 
@@ -36,7 +37,7 @@
 
           <div class="row">
             <div class="col-lg-12">
-              <span ng-class="blog-post-thumbnail" ng-bind-html="to_trusted(article.image_940)"></span>
+              <span ng-class="blog-post-thumbnail" ng-bind-html="to_trusted(article.main_image)"></span>
             </div>
           </div>
 
@@ -48,7 +49,7 @@
           </div>
 
       </div>
-
+      <div class="footer" ng-show='article.busy'>Loading articles...</div>
     </div>
   </div>
 </div>
